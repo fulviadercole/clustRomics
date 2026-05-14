@@ -1,0 +1,80 @@
+---
+title: "Data analysis with clustRomics"
+author: "Fulvia D'Ercole"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Data analysis with clustRomics}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+#Introduction
+
+
+```{r, message=FALSE, warning=FALSE}
+library(clustRomics)
+library(SummarizedExperiment)
+```
+
+# 1. Loading data 
+# To use the example file included in the package:
+
+``` {r}
+example_path <- system.file("extdata", "test_genes.csv", package = "clustRomics")
+se <- read_expression(example_path)
+``` 
+
+# Or load your own data:
+
+``` {r, eval = FALSE}
+se <- read_expression("path/to/your/data.csv")
+```
+
+# 2. Normalization: You can choose between different normalization strategies depending on your downstream analysis needs
+
+```{r}
+#Methods available: "log" (log-transformation) or "quantile"
+se <- normalize_data(se, method = "log")
+```
+
+# 3. Genes cluster: group genes with similar expression profiles using various algorithms:
+
+```{r}
+#Methods available: "kmeans", "hclust" (hierarchical)
+se <- cluster_genes(se, method = "kmeans", k = 5)
+```
+
+# 4. Analysis and visualization
+## Detecting Outlier: Identify and remove genes with anomalous distributions:
+
+```{r}
+se <- detect_outliers(se, threshold = 2)
+```
+
+# Heatmap
+## View gene clusters across different conditions:
+
+``` {r}
+plot_expression_heatmap(se)
+```
+
+# PCA Plot 
+## Explore the distribution of samples in principal component space:
+
+```{r}
+plot_pca(se)
+```
+
+# Biological Enrichment (GSEA) 
+## Identify biological pathways (GOs) enriched in a specific cluster:
+
+```{r}
+enrich_res <- run_cluster_enrichment(se, cluster_id = 1)
+```

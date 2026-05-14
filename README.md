@@ -9,9 +9,21 @@ clustRomics is an R package developed for analyzing and clustering gene expressi
 
 ## Installation
 
+## Installation
+Since this package depends on Bioconductor resources, please ensure `BiocManager` is installed first:
+
+```r
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+# To ensure all Bioconductor dependencies are caught:
+BiocManager::install(c("preprocessCore", "org.Hs.eg.db", "AnnotationDbi", 
+                       "clusterProfiler", "ComplexHeatmap", "SummarizedExperiment"))
+```
+
 You can install the development version from GitHub using **devtools**:
 
-``` r
+```
 # install.packages("devtools")
 devtools::install_github("fulviadercole/clustRomics")
 ```

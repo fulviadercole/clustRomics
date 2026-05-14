@@ -1,6 +1,6 @@
 Package: clustRomics
 Title: Analysis and Clustering of Gene Expression Data
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     person("Fulvia", "D'Ercole", , "fulvia.dercole@studenti.unimi.it", role = c("aut", "cre"))
 Description: A package for loading, normalizing, and clustering
@@ -8,6 +8,7 @@ Description: A package for loading, normalizing, and clustering
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
+biocViews: Software, Bioinformatics, GeneExpression, Clustering, Sequencing
 RoxygenNote: 7.3.3
 Imports: 
     SummarizedExperiment,
@@ -15,4 +16,15 @@ Imports:
     clusterProfiler,
     AnnotationDbi,
     org.Hs.eg.db,
-    preprocessCore
+    preprocessCore,
+    ggplot2,
+    stats,
+    methods
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: 
+    knitr
+Remotes: 
+    bioconductor::release

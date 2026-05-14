@@ -1,0 +1,18 @@
+Package: clustRomics
+Title: Analysis and Clustering of Gene Expression Data
+Version: 0.0.0.9000
+Authors@R: 
+    person("Fulvia", "D'Ercole", , "fulvia.dercole@studenti.unimi.it", role = c("aut", "cre"))
+Description: A package for loading, normalizing, and clustering
+    gene expression data using SummarizedExperiment.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.3
+Imports: 
+    SummarizedExperiment,
+    ComplexHeatmap,
+    clusterProfiler,
+    AnnotationDbi,
+    org.Hs.eg.db,
+    preprocessCore

@@ -25,7 +25,7 @@ You can install the development version from GitHub using **devtools**:
 
 ```
 # install.packages("devtools")
-devtools::install_github("fulviadercole/clustRomics")
+devtools::install_github("fulviadercole/clustRomics", build_vignettes = TRUE)
 ```
 
 ## How to use it

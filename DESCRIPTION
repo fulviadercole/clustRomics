@@ -8,7 +8,6 @@ Description: A package for loading, normalizing, and clustering
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-biocViews: Software, Bioinformatics, GeneExpression, Clustering, Sequencing
 RoxygenNote: 7.3.3
 Imports: 
     SummarizedExperiment,
@@ -26,5 +25,4 @@ Suggests:
     testthat (>= 3.0.0)
 VignetteBuilder: 
     knitr
-Remotes: 
-    bioconductor::release
+biocViews: Software, Bioinformatics, GeneExpression, Clustering, Sequencing

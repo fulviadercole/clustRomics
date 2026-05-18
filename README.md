@@ -33,6 +33,7 @@ devtools::install_github("fulviadercole/clustRomics", build_vignettes = TRUE)
 ``` r
 library(clustRomics)
 library(SummarizedExperiment)
+library(org.Hs.eg.db)
 ```
 
 # 1. Loading data 

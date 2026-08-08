@@ -7,7 +7,7 @@
 
 clustRomics is an R package developed for analyzing and clustering gene expression data. The package uses standard Bioconductor classes (`SummarizedExperiment`) for interoperability and provides tools ranging from preprocessing to Gene Set Enrichment Analysis (GSEA).
 
-## Installation
+
 
 ## Installation
 Since this package depends on Bioconductor resources, please ensure `BiocManager` is installed first:
